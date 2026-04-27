@@ -1,51 +1,49 @@
 class Time:
+
     def __init__(self):
-        self.sec = 0
-        self.msec = 0
+        pass
 
     @property
     def sec(self):
-        return self.__sec
+        pass
 
     @sec.setter
     def sec(self, sec):
-        self.__sec = sec
+        pass
 
     @property
     def msec(self):
-        return self.__msec
+        pass
 
     @msec.setter
     def msec(self, msec):
-        self.__msec = msec
-
+        pass
 
 class Sample:
+
     def __init__(self):
-        self.seq = 0;
-        self.time = Time()
-        self.value = 0.0
+        pass
 
     @property
     def seq(self):
-        return self.__seq
+        pass
 
     @seq.setter
     def seq(self, seq):
-        self.__seq = seq
+        pass
 
     @property
     def time(self):
-        return self.__time
+        pass
 
     @time.setter
     def time(self, time):
-        self.__time = time
+        pass
 
     @property
     def value(self):
-        return self.__value
+        pass
 
     @value.setter
     def value(self, value):
-        self.__value = value
+        pass

@@ -1,76 +1,58 @@
 import os
 from abc import ABCMeta
-
 from rtamt.semantics.abstract_discrete_time_online_interpreter import AbstractDiscreteTimeOnlineInterpreter
 from rtamt.semantics.abstract_dense_time_online_interpreter import AbstractDenseTimeOnlineInterpreter
 from rtamt.semantics.abstract_discrete_time_offline_interpreter import AbstractDiscreteTimeOfflineInterpreter
 from rtamt.semantics.abstract_dense_time_offline_interpreter import AbstractDenseTimeOfflineInterpreter
-
 from rtamt.semantics.discrete_time_interpreter import DiscreteTimeInterpreter
-
 from rtamt.exception.exception import RTAMTException
-
 from antlr4 import *
 from antlr4.InputStream import InputStream
 from antlr4.error.ErrorListener import ErrorListener
-
 
 class AbstractSpecification(object):
     __metaclass__ = ABCMeta
 
     def __init__(self, ast):
-        self.name = 'Abstract Specification'
-        self.ast = ast
-        self.interpreter = None
-        self.set_ast_flag = False # It is for interpreter is set ast or not.
-        self.out_var = ''
-        self.out_var_field = ''
-        self.var_topic_dict = dict()
-        self.free_vars = set()
-        self.var_object_dict = dict()
-        self.phi_name_to_node_dict = dict()
-
-        #TODO we need to move it to RTAMT4ROS as wrapper
-        self.modules = dict()
+        pass
 
     @property
     def name(self):
-        return self.__name
+        pass
 
     @name.setter
     def name(self, name):
-        self.__name = name
+        pass
 
     @property
     def spec(self):
-        return self.ast.spec
+        pass
 
     @spec.setter
     def spec(self, spec):
-        self.ast.spec = spec
+        pass
 
-    # forwarding to ast
     def add_var(self, var):
-        self.ast.vars.add(var)
+        pass
 
     def get_value(self, phi_name):
-        return self.ast.get_value(phi_name)
+        pass
 
     def add_sub_spec(self, sub_spec):
-        self.ast.add_sub_spec(sub_spec)
+        pass
 
     def set_var_io_type(self, var, io_type):
-        self.ast.set_var_io_type(var, io_type)
+        pass
 
     def declare_var(self, var_name, var_type):
-        self.ast.declare_var(var_name, var_type)
+        pass
 
     def declare_const(self, const_name, const_type, const_val):
-        self.ast.declare_const(const_name, const_type, const_val)
+        pass
 
     @property
     def out_var(self):
-        return self.ast.out_var
+        pass
 
     @out_var.setter
     def out_var(self, out_var):
@@ -78,7 +60,7 @@ class AbstractSpecification(object):
 
     @property
     def out_var_field(self):
-        return self.ast.out_var_field
+        pass
 
     @out_var_field.setter
     def out_var_field(self, out_var_field):
@@ -86,7 +68,7 @@ class AbstractSpecification(object):
 
     @property
     def var_topic_dict(self):
-        return self.ast.var_topic_dict
+        pass
 
     @var_topic_dict.setter
     def var_topic_dict(self, var_topic_dict):
@@ -94,135 +76,88 @@ class AbstractSpecification(object):
 
     @property
     def var_object_dict(self):
-        return self.ast.var_object_dict
+        pass
 
     @var_object_dict.setter
     def var_object_dict(self, var_object_dict):
-        self.__var_object_dict = var_object_dict
-        self.ast.var_object_dict = self.var_object_dict
+        pass
 
     @property
     def phi_name_to_node_dict(self):
-        return self.ast.phi_name_to_node_dict
+        pass
 
     @phi_name_to_node_dict.setter
     def phi_name_to_node_dict(self, phi_name_to_node_dict):
-        self.__phi_name_to_node_dict = phi_name_to_node_dict
-        self.ast.phi_name_to_node_dict = self.phi_name_to_node_dict
+        pass
 
     @property
     def free_vars(self):
-        return self.ast.free_vars
+        pass
 
     @free_vars.setter
     def free_vars(self, free_vars):
         pass
 
-    def modules(self, modules): #TODO: send syntax layer (ast)?
-        return self.ast.modules(modules)
+    def modules(self, modules):
+        pass
 
-    def import_module(self, from_name, module_name): #TODO: send syntax layer (ast)?
-        self.ast.import_module(from_name, module_name)
+    def import_module(self, from_name, module_name):
+        pass
 
     def set_var_topic(self, var_name, var_topic):
-        self.ast.set_var_topic(var_name, var_topic)
+        pass
 
     def spec_print(self):
-        name = str()
-        for spec in self.ast.specs:
-            name = name + spec.name + '\n'
-        return name
+        pass
 
     def parse(self):
-        self.ast.parse()
+        pass
 
-    # forwarding to interpreter
     def set_sampling_period(self, sampling_period=int(1), unit='s', tolerance=float(0.1)):
-        if hasattr(self, 'online_interpreter'):
-            if isinstance(self.online_interpreter, DiscreteTimeInterpreter):
-                self.online_interpreter.set_sampling_period(sampling_period, unit, tolerance)
-            else:
-                RTAMTException('time_unit_transformer() allowed only discrete time')
-
-        if hasattr(self, 'offline_interpreter'):
-            if isinstance(self.offline_interpreter, DiscreteTimeInterpreter):
-                self.offline_interpreter.set_sampling_period(sampling_period, unit, tolerance)
-            else:
-                RTAMTException('time_unit_transformer() allowed only discrete time')
+        pass
 
     def get_sampling_frequency(self):
-        if hasattr(self, 'online_interpreter'):
-            if isinstance(self.online_interpreter, DiscreteTimeInterpreter):
-                return self.online_interpreter.get_sampling_frequency()
-            else:
-                RTAMTException('time_unit_transformer() allowed only discrete time')
-        if hasattr(self, 'offline_interpreter'):
-            if isinstance(self.offline_interpreter, DiscreteTimeInterpreter):
-                return self.offline_interpreter.get_sampling_frequency()
-            else:
-                RTAMTException('time_unit_transformer() allowed only discrete time')
+        pass
 
     @property
     def sampling_violation_counter(self):
-        if hasattr(self, 'online_interpreter'):
-            if isinstance(self.online_interpreter, DiscreteTimeInterpreter):
-                return self.online_interpreter.sampling_violation_counter
-            else:
-                RTAMTException('only discrete time has sampling_violation_counter')
-        if hasattr(self, 'offline_interpreter'):
-            if isinstance(self.offline_interpreter, DiscreteTimeInterpreter):
-                return self.offline_interpreter.sampling_violation_counter
-            else:
-                RTAMTException('only discrete time has sampling_violation_counter')
+        pass
 
     @property
     def sampling_tolerance(self):
-        if hasattr(self, 'online_interpreter'):
-            if isinstance(self.online_interpreter, DiscreteTimeInterpreter):
-                return self.online_interpreter.sampling_tolerance
-            else:
-                RTAMTException('only discrete time has sampling_tolerance')
-        if hasattr(self, 'offline_interpreter'):
-            if isinstance(self.offline_interpreter, DiscreteTimeInterpreter):
-                return self.offline_interpreter.sampling_tolerance
-            else:
-                RTAMTException('only discrete time has sampling_tolerance')
+        pass
 
-    #TODO we need to move it to RTAMT4ROS as wrapper
     @property
     def publish_var(self):
-        return self.__publish_var
+        pass
 
     @publish_var.setter
     def publish_var(self, publish_var):
-        self.__publish_var = publish_var
+        pass
 
     @property
     def publish_var_field(self):
-        return self.__publish_var_field
+        pass
 
     @publish_var_field.setter
     def publish_var_field(self, publish_var_field):
-        self.__publish_var_field = publish_var_field
+        pass
 
-    #TODO we are wondering. put add it to issue comment
     def add_input_var(self, input_var):
-        self.in_vars.add(input_var)
+        pass
 
     def remove_input_var(self, var):
-        self.in_vars.discard(var)
+        pass
 
     def add_output_var(self, output_var):
-        self.out_vars.add(output_var)
+        pass
 
     def remove_output_var(self, var):
-        self.out_vars.discard(var)
+        pass
 
     def add_op(self, op):
-        self.ops.add(op)
+        pass
 
-
-    #TODO goto Syntax while keeping in Spec too.
     def get_spec_from_file(self, path):
         """Opens a text file and returns its content as a string
         Parameters:
@@ -230,112 +165,40 @@ class AbstractSpecification(object):
         Returns
             out : String - file content
         """
-        out = None
-        if os.path.exists(path):
-            f = open(path, "r")
-            out = f.read()
-            f.close()
-        else:
-            raise RTAMTException('The file {} does not exist.'.format(path))
-        return out
-
+        pass
 
 class DiscreteTimeOfflineInterpreter(object):
     pass
 
-
 class AbstractOfflineSpecification(AbstractSpecification):
+
     def __init__(self, ast, offlineInterpreter, explainer=None):
-        AbstractSpecification.__init__(self, ast)
-        self.name = 'Abstract Offline Specification'
-        self.offline_interpreter = offlineInterpreter
-        self.explainer = explainer
+        pass
 
     def explain(self):
-        self.explainer.explain(self.ast)
+        pass
 
-    # forwarding to interpreter
     def evaluate(self, *args, **kwargs):
-        if self.set_ast_flag != True:
-            self.offline_interpreter.set_ast(self.ast)
-            self.set_ast_flag = True
-
-        #TODO we may make it consistent with interpreter class.
-        if isinstance(self.offline_interpreter, AbstractDenseTimeOfflineInterpreter):
-            if len(args) == 0:
-                raise Exception()
-            elif len(args) == 1:
-                dataset = [args[0]]
-            else:
-                dataset = []
-                for i in args:
-                    dataset.append(i)
-            return self.offline_interpreter.evaluate(dataset)
-        elif isinstance(self.offline_interpreter, AbstractDiscreteTimeOfflineInterpreter):
-            dataset = args[0]
-            return self.offline_interpreter.evaluate(dataset)
-        else:
-            raise Exception('Wrong interpreter!')
-
+        pass
 
 class AbstractOnlineSpecification(AbstractSpecification):
+
     def __init__(self, ast, onlineInterpreter, pastifier=None):
-        AbstractSpecification.__init__(self, ast)
-        self.name = 'Abstract Online Specification'
-        self.online_interpreter = onlineInterpreter
-        self.pastifier = pastifier
+        pass
 
-    # forwarding pastify
     def pastify(self):
-        self.ast = self.pastifier.pastify(self.ast)
+        pass
 
-    # forwarding to interpreter
     def update(self, *args, **kwargs):
-        if self.set_ast_flag != True:
-            self.online_interpreter.set_ast(self.ast)
-            self.set_ast_flag = True
-
-        #TODO we may make it consistent with interpreter class.
-        if isinstance(self.online_interpreter, AbstractDenseTimeOnlineInterpreter):
-            if len(args) == 0:
-                raise Exception()
-            elif len(args) == 1:
-                dataset = [args[0]]
-            else:
-                dataset = []
-                for i in args:
-                    dataset.append(i)
-            return self.online_interpreter.update(dataset)
-        elif isinstance(self.online_interpreter, AbstractDiscreteTimeOnlineInterpreter):
-            i = args[0]
-            dataset = args[1]
-            return self.online_interpreter.update(i, dataset)
+        pass
 
     def final_update(self, *args, **kwargs):
-        if self.set_ast_flag != True:
-            self.online_interpreter.set_ast(self.ast)
-            self.set_ast_flag = True
-
-        #TODO we may make it consistent with interpreter class.
-        if len(args) == 0:
-            raise Exception()
-        elif len(args) == 1:
-            dataset = [args[0]]
-        else:
-            dataset = []
-            for i in args:
-                dataset.append(i)
-
-        return self.online_interpreter.final_update(dataset)
+        pass
 
     def reset(self):
-        self.online_interpreter.reset()
+        pass
 
-
-# we would not recomend to use it
-# Please note that. Even the class have both evaluate and update, calling both with same instance is not expected.
 class AbstractOfflineOnlineSpecification(AbstractOfflineSpecification, AbstractOnlineSpecification):
+
     def __init__(self, ast, offlineInterpreter, onlineInterpreter, pastifier=None):
-        AbstractOfflineSpecification.__init__(self, ast, offlineInterpreter)
-        AbstractOnlineSpecification.__init__(self, ast, onlineInterpreter, pastifier)
-        self.name = 'Abstract Offline Online Specification'
+        pass

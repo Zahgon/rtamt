@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Created on Mon Sep 23 2019
 
@@ -14,83 +13,76 @@ class AbstractNode:
     __metaclass__ = ABCMeta
 
     def __init__(self):
-        self.in_vars = []
-        self.out_vars = []
-        self.children = list()
-        self.interpreter = None
-        self.name = ''
-        self.node = None
-
+        pass
 
     def add_child(self, child):
-        self.children.append(child)
+        pass
 
     def accept(self, visitor):
         """accept: recursive function needed to implement node visitors
         Inputs:
         visitor - Visitor object
         """
-        for child in self.children:
-            child.accept(visitor)
+        pass
 
     @property
     def interpreter(self):
         """Getter for the online_interpreter"""
-        return self.__interpreter
+        pass
 
     @interpreter.setter
     def interpreter(self, interpreter):
         """Setter for the online_interpreter"""
-        self.__interpreter = interpreter
+        pass
 
     @property
     def name(self):
         """Getter for the name"""
-        return self.__name
+        pass
 
     @name.setter
     def name(self, name):
         """Setter for the name"""
-        self.__name = name
+        pass
 
     @property
     def node(self):
         """Getter for the node"""
-        return self.__node
+        pass
 
     @node.setter
     def node(self, node):
         """Setter for the horizon"""
-        self.__node = node
+        pass
 
     @property
     def children(self):
-        return self.__children
+        pass
 
     @children.setter
     def children(self, children):
-        self.__children = children
+        pass
 
     @property
     def in_vars(self):
         """Getter for the in_vars"""
-        return self.__in_vars
+        pass
 
     @in_vars.setter
     def in_vars(self, in_vars):
         """Setter for the in_vars"""
-        self.__in_vars = in_vars
+        pass
 
     @property
     def out_vars(self):
         """Getter for the out_vars"""
-        return self.__out_vars
+        pass
 
     @out_vars.setter
     def out_vars(self, out_vars):
         """Setter for the out_vars"""
-        self.__out_vars = out_vars
+        pass
 
     def __repr__(self):
-        '''Returns representation of the object'''
-        return self.__class__.__name__
+        """Returns representation of the object"""
+        pass

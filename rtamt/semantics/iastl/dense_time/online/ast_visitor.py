@@ -5,30 +5,19 @@ from rtamt.semantics.enumerations.options import Semantics
 class IAStlOutputRobustnessDenseTimeOnlineAstVisitor(StlDenseTimeOnlineAstVisitor):
 
     def visitPredicate(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = PredicateOperation(node.operator, Semantics.OUTPUT_ROBUSTNESS,
-                                                                  node.in_vars, node.out_vars)
+        pass
 
 class IAStlInputVacuityDenseTimeOnlineAstVisitor(StlDenseTimeOnlineAstVisitor):
 
     def visitPredicate(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = PredicateOperation(node.operator, Semantics.INPUT_VACUITY,
-                                                                  node.in_vars, node.out_vars)
-
+        pass
 
 class IAStlOutputVacuityDenseTimeOnlineAstVisitor(StlDenseTimeOnlineAstVisitor):
 
     def visitPredicate(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-
-        self.online_operator_dict[node.name] = PredicateOperation(node.operator, Semantics.OUTPUT_VACUITY,
-                                                                  node.in_vars, node.out_vars)
-
+        pass
 
 class IAStlInputRobustnessDenseTimeOnlineAstVisitor(StlDenseTimeOnlineAstVisitor):
 
     def visitPredicate(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = PredicateOperation(node.operator, Semantics.INPUT_ROBUSTNESS,
-                                                                  node.in_vars, node.out_vars)
+        pass

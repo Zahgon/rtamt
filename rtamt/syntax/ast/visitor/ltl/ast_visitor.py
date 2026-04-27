@@ -1,5 +1,4 @@
 from rtamt.syntax.ast.visitor.abstract_ast_visitor import AbstractAstVisitor
-
 from rtamt.syntax.node.ltl.predicate import Predicate
 from rtamt.syntax.node.ltl.strong_next import StrongNext
 from rtamt.syntax.node.ltl.strong_previous import StrongPrevious
@@ -32,176 +31,108 @@ from rtamt.syntax.node.ltl.fall import Fall
 from rtamt.syntax.node.ltl.constant import Constant
 from rtamt.syntax.node.ltl.next import Next
 from rtamt.syntax.node.ltl.previous import Previous
-
 from rtamt.exception.exception import RTAMTException
-
 
 class LtlAstVisitor(AbstractAstVisitor):
 
     def visit(self, node, *args, **kwargs):
-        if isinstance(node, Predicate):
-            result = self.visitPredicate(node, *args, **kwargs)
-        elif isinstance(node, Variable):
-            result = self.visitVariable(node, *args, **kwargs)
-        elif isinstance(node, Neg):
-            result = self.visitNot(node, *args, **kwargs)
-        elif isinstance(node, Disjunction):
-            result = self.visitOr(node, *args, **kwargs)
-        elif isinstance(node, Conjunction):
-            result = self.visitAnd(node, *args, **kwargs)
-        elif isinstance(node, Implies):
-            result = self.visitImplies(node, *args, **kwargs)
-        elif isinstance(node, Iff):
-            result = self.visitIff(node, *args, **kwargs)
-        elif isinstance(node, Xor):
-            result = self.visitXor(node, *args, **kwargs)
-        elif isinstance(node, Eventually):
-            result = self.visitEventually(node, *args, **kwargs)
-        elif isinstance(node, Always):
-            result = self.visitAlways(node, *args, **kwargs)
-        elif isinstance(node, Until):
-            result = self.visitUntil(node, *args, **kwargs)
-        elif isinstance(node, Once):
-            result = self.visitOnce(node, *args, **kwargs)
-        elif isinstance(node, Historically):
-            result = self.visitHistorically(node, *args, **kwargs)
-        elif isinstance(node, Since):
-            result = self.visitSince(node, *args, **kwargs)
-        elif isinstance(node, Abs):
-            result = self.visitAbs(node, *args, **kwargs)
-        elif isinstance(node, Sqrt):
-            result = self.visitSqrt(node, *args, **kwargs)
-        elif isinstance(node, Exp):
-            result = self.visitExp(node, *args, **kwargs)
-        elif isinstance(node, Pow):
-            result = self.visitPow(node, *args, **kwargs)
-        elif isinstance(node, Log):
-            result = self.visitLog(node, *args, **kwargs)
-        elif isinstance(node, Ln):
-            result = self.visitLn(node, *args, **kwargs)
-        elif isinstance(node, Addition):
-            result = self.visitAddition(node, *args, **kwargs)
-        elif isinstance(node, Subtraction):
-            result = self.visitSubtraction(node, *args, **kwargs)
-        elif isinstance(node, Negate):
-            result = self.visitNegate(node, *args, **kwargs)
-        elif isinstance(node, Multiplication):
-            result = self.visitMultiplication(node, *args, **kwargs)
-        elif isinstance(node, Division):
-            result = self.visitDivision(node, *args, **kwargs)
-        elif isinstance(node, Rise):
-            result = self.visitRise(node, *args, **kwargs)
-        elif isinstance(node, Fall):
-            result = self.visitFall(node, *args, **kwargs)
-        elif isinstance(node, Constant):
-            result = self.visitConstant(node, *args, **kwargs)
-        elif isinstance(node, Previous):
-            result = self.visitPrevious(node, *args, **kwargs)
-        elif isinstance(node, Next):
-            result = self.visitNext(node, *args, **kwargs)
-        elif isinstance(node, StrongPrevious):
-            result = self.visitStrongPrevious(node, *args, **kwargs)
-        elif isinstance(node, StrongNext):
-            result = self.visitStrongNext(node, *args, **kwargs)
-        else:
-            self.raise_exception('{} is not a TL operator'.format(node.__class__.__name__))
-        return result
+        pass
 
     def raise_exception(self, text):
-        raise RTAMTException(text)
+        pass
 
     def visitPredicate(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitVariable(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitAbs(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitSqrt(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitPow(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitLog(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitLn(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitExp(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitAddition(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitSubtraction(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitNegate(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitMultDiv(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitNot(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitAnd(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitOr(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitImplies(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitIff(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitXor(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitEventually(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitAlways(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitUntil(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitOnce(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitHistorically(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitSince(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitRise(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitFall(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitConstant(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitPrevious(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitNext(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitStrongPrevious(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitStrongNext(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass
 
     def visitDefault(self, node, *args, **kwargs):
-        return self.visitChildren(node, *args, **kwargs)
+        pass

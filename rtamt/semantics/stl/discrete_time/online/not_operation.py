@@ -1,6 +1,7 @@
 from rtamt.semantics.abstract_online_operation import AbstractOnlineOperation
 
 class NotOperation(AbstractOnlineOperation):
+
     def __init__(self):
         pass
 
@@ -8,5 +9,4 @@ class NotOperation(AbstractOnlineOperation):
         pass
 
     def update(self, sample):
-        sample_return = - sample
-        return sample_return
+        pass

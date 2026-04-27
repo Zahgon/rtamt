@@ -9,6 +9,7 @@ class Predicate(BinaryNode):
         child2 : Node
         operator : OperatorType (LEQ, GEQ, LESS, GREATER, EQ or NEQ)
     """
+
     def __init__(self, child1, child2, operator):
         """Constructor for Predicate node
 
@@ -18,22 +19,14 @@ class Predicate(BinaryNode):
             io_type : IOType enumeration (INPUT, OUTPUT or UNKNOWN)
             operator : OperatorType (LEQ, GEQ, LESS, GREATER, EQ or NEQ)
         """
+        pass
 
-        super(Predicate, self).__init__(child1, child2)
-        self.operator = operator
-        self.in_vars = child1.in_vars + child2.in_vars
-        self.out_vars = child1.out_vars + child2.out_vars
-
-        self.name = '(' + child1.name + ')' + str(self.operator) + '(' + child2.name + ')'
-
-
-        
     @property
     def operator(self):
         """Getter for operator"""
-        return self.__operator
-    
+        pass
+
     @operator.setter
     def operator(self, operator):
         """Setter for operator"""
-        self.__operator = operator
+        pass

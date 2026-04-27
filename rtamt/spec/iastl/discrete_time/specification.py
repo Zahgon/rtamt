@@ -1,19 +1,11 @@
-from rtamt.semantics.iastl.discrete_time.offline.interpreter import IAStlOutputRobustnessDiscreteTimeOfflineInterpreter, \
-    IAStlInputVacuityDiscreteTimeOfflineInterpreter, IAStlInputRobustnessDiscreteTimeOfflineInterpreter, \
-    IAStlOutputVacuityDiscreteTimeOfflineInterpreter
+from rtamt.semantics.iastl.discrete_time.offline.interpreter import IAStlOutputRobustnessDiscreteTimeOfflineInterpreter, IAStlInputVacuityDiscreteTimeOfflineInterpreter, IAStlInputRobustnessDiscreteTimeOfflineInterpreter, IAStlOutputVacuityDiscreteTimeOfflineInterpreter
 from rtamt.semantics.stl.discrete_time.online.interpreter import StlDiscreteTimeOnlineInterpreter
 from rtamt.spec.abstract_specification import AbstractOfflineSpecification, AbstractOnlineSpecification, AbstractOfflineOnlineSpecification
-
 from rtamt.syntax.ast.parser.stl.specification_parser import StlAst
-
-
 from rtamt.semantics.stl.discrete_time.offline.interpreter import StlDiscreteTimeOfflineInterpreter
-from rtamt.semantics.iastl.discrete_time.online.interpreter import IAStlOutputRobustnessDiscreteTimeOnlineInterpreter, \
-    IAStlInputVacuityDiscreteTimeOnlineInterpreter, IAStlInputRobustnessDiscreteTimeOnlineInterpreter, \
-    IAStlOutputVacuityDiscreteTimeOnlineInterpreter
+from rtamt.semantics.iastl.discrete_time.online.interpreter import IAStlOutputRobustnessDiscreteTimeOnlineInterpreter, IAStlInputVacuityDiscreteTimeOnlineInterpreter, IAStlInputRobustnessDiscreteTimeOnlineInterpreter, IAStlOutputVacuityDiscreteTimeOnlineInterpreter
 from rtamt.semantics.enumerations.options import *
 from rtamt.pastifier.stl.pastifier import StlPastifier
-
 
 def IASTLDiscreteTimeSpecification(semantics=Semantics.STANDARD, language=Language.PYTHON):
     """
@@ -22,48 +14,28 @@ def IASTLDiscreteTimeSpecification(semantics=Semantics.STANDARD, language=Langua
 
     Attributes:
     """
-    if semantics == Semantics.STANDARD and language == Language.PYTHON:
-        spec = AbstractOfflineOnlineSpecification(StlAst(), StlDiscreteTimeOfflineInterpreter(), StlDiscreteTimeOnlineInterpreter(), pastifier=StlPastifier())
-    elif semantics == Semantics.OUTPUT_ROBUSTNESS and language == Language.PYTHON:
-        spec = AbstractOfflineOnlineSpecification(StlAst(), StlDiscreteTimeOfflineInterpreter(), IAStlOutputRobustnessDiscreteTimeOnlineInterpreter(semantics), pastifier=StlPastifier())
-    return spec
-
-
+    pass
 
 def IAStlOutputRobustnessDiscreteTimeOfflineSpecification():
-    spec = AbstractOfflineSpecification(StlAst(), IAStlOutputRobustnessDiscreteTimeOfflineInterpreter())
-    return spec
+    pass
 
 def IAStlInputVacuityDiscreteTimeOfflineSpecification():
-    spec = AbstractOfflineSpecification(StlAst(), IAStlInputVacuityDiscreteTimeOfflineInterpreter())
-    return spec
+    pass
 
 def IAStlInputRobustnessDiscreteTimeOfflineSpecification():
-    spec = AbstractOfflineSpecification(StlAst(), IAStlInputRobustnessDiscreteTimeOfflineInterpreter())
-    return spec
+    pass
 
 def IAStlOutputVacuityDiscreteTimeOfflineSpecification():
-    spec = AbstractOfflineSpecification(StlAst(), IAStlOutputVacuityDiscreteTimeOfflineInterpreter())
-    return spec
+    pass
 
 def IAStlOutputRobustnessDiscreteTimeOnlineSpecification():
-    spec = AbstractOnlineSpecification(StlAst(), IAStlOutputRobustnessDiscreteTimeOnlineInterpreter(),
-                                       pastifier=StlPastifier())
-    return spec
+    pass
 
 def IAStlInputVacuityDiscreteTimeOnlineSpecification():
-    spec = AbstractOnlineSpecification(StlAst(), IAStlInputVacuityDiscreteTimeOnlineInterpreter(),
-                                       pastifier=StlPastifier())
-    return spec
+    pass
 
 def IAStlInputRobustnessDiscreteTimeOnlineSpecification():
-    spec = AbstractOnlineSpecification(StlAst(), IAStlInputRobustnessDiscreteTimeOnlineInterpreter(),
-                                       pastifier=StlPastifier())
-    return spec
+    pass
 
 def IAStlOutputVacuityDiscreteTimeOnlineSpecification():
-    spec = AbstractOnlineSpecification(StlAst(), IAStlOutputVacuityDiscreteTimeOnlineInterpreter(), pastifier=StlPastifier())
-    return spec
-
-
-
+    pass

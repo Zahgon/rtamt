@@ -1,8 +1,8 @@
 import math
 from rtamt.semantics.abstract_online_operation import AbstractOnlineOperation
 
-
 class NegateOperation(AbstractOnlineOperation):
+
     def __init__(self):
         pass
 
@@ -10,5 +10,4 @@ class NegateOperation(AbstractOnlineOperation):
         pass
 
     def update(self, sample):
-        sample_result = - sample
-        return sample_result
+        pass

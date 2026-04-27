@@ -1,175 +1,97 @@
 from rtamt.syntax.ast.visitor.ltl.ast_visitor import LtlAstVisitor
-
 from rtamt.exception.exception import RTAMTException
-
 
 class LtlHorizon(LtlAstVisitor):
 
     def __init__(self):
-        self.horizons = dict()
+        pass
 
     def visitConstant(self, node, *args, **kwargs):
-        out = 0
-        self.horizons[node] = out
-        return out
+        pass
 
     def visitPredicate(self, node, *args, **kwargs):
-        op1_horizon = self.visit(node.children[0], *args, **kwargs)
-        op2_horizon = self.visit(node.children[1], *args, **kwargs)
-        out = max(op1_horizon, op2_horizon)
-        self.horizons[node] = out
-        return out
+        pass
 
     def visitVariable(self, node, *args, **kwargs):
-        out = 0
-        self.horizons[node] = out
-        return out
+        pass
 
     def visitAddition(self, node, *args, **kwargs):
-        op1_horizon = self.visit(node.children[0], *args, **kwargs)
-        op2_horizon = self.visit(node.children[1], *args, **kwargs)
-        out = max(op1_horizon, op2_horizon)
-        self.horizons[node] = out
-        return out
+        pass
 
     def visitMultiplication(self, node, *args, **kwargs):
-        op1_horizon = self.visit(node.children[0], *args, **kwargs)
-        op2_horizon = self.visit(node.children[1], *args, **kwargs)
-        out = max(op1_horizon, op2_horizon)
-        self.horizons[node] = out
-        return out
+        pass
 
     def visitSubtraction(self, node, *args, **kwargs):
-        op1_horizon = self.visit(node.children[0], *args, **kwargs)
-        op2_horizon = self.visit(node.children[1], *args, **kwargs)
-        out = max(op1_horizon, op2_horizon)
-        self.horizons[node] = out
-        return out
+        pass
 
     def visitDivision(self, node, *args, **kwargs):
-        op1_horizon = self.visit(node.children[0], *args, **kwargs)
-        op2_horizon = self.visit(node.children[1], *args, **kwargs)
-        out = max(op1_horizon, op2_horizon)
-        self.horizons[node] = out
-        return out
+        pass
 
     def visitAbs(self, node, *args, **kwargs):
-        op_horizon = self.visit(node.children[0], *args, **kwargs)
-        self.horizons[node] = op_horizon
-        return op_horizon
+        pass
 
     def visitSqrt(self, node, *args, **kwargs):
-        op_horizon = self.visit(node.children[0], *args, **kwargs)
-        self.horizons[node] = op_horizon
-        return op_horizon
+        pass
 
     def visitExp(self, node, *args, **kwargs):
-        op_horizon = self.visit(node.children[0], *args, **kwargs)
-        self.horizons[node] = op_horizon
-        return op_horizon
+        pass
 
     def visitPow(self, node, *args, **kwargs):
-        op1_horizon = self.visit(node.children[0], *args, **kwargs)
-        op2_horizon = self.visit(node.children[1], *args, **kwargs)
-        out = max(op1_horizon, op2_horizon)
-        self.horizons[node] = out
-        return out
+        pass
 
     def visitRise(self, node, *args, **kwargs):
-        op_horizon = self.visit(node.children[0], *args, **kwargs)
-        self.horizons[node] = op_horizon
-        return op_horizon
+        pass
 
     def visitFall(self, node, *args, **kwargs):
-        op_horizon = self.visit(node.children[0], *args, **kwargs)
-        self.horizons[node] = op_horizon
-        return op_horizon
+        pass
 
     def visitNot(self, node, *args, **kwargs):
-        op_horizon = self.visit(node.children[0], *args, **kwargs)
-        self.horizons[node] = op_horizon
-        return op_horizon
+        pass
 
     def visitAnd(self, node, *args, **kwargs):
-        op1_horizon = self.visit(node.children[0], *args, **kwargs)
-        op2_horizon = self.visit(node.children[1], *args, **kwargs)
-        out = max(op1_horizon, op2_horizon)
-        self.horizons[node] = out
-        return out
+        pass
 
     def visitOr(self, node, *args, **kwargs):
-        op1_horizon = self.visit(node.children[0], *args, **kwargs)
-        op2_horizon = self.visit(node.children[1], *args, **kwargs)
-        out = max(op1_horizon, op2_horizon)
-        self.horizons[node] = out
-        return out
+        pass
 
     def visitImplies(self, node, *args, **kwargs):
-        op1_horizon = self.visit(node.children[0], *args, **kwargs)
-        op2_horizon = self.visit(node.children[1], *args, **kwargs)
-        out = max(op1_horizon, op2_horizon)
-        self.horizons[node] = out
-        return out
+        pass
 
     def visitIff(self, node, *args, **kwargs):
-        op1_horizon = self.visit(node.children[0], *args, **kwargs)
-        op2_horizon = self.visit(node.children[1], *args, **kwargs)
-        out = max(op1_horizon, op2_horizon)
-        self.horizons[node] = out
-        return out
+        pass
 
     def visitXor(self, node, *args, **kwargs):
-        op1_horizon = self.visit(node.children[0], *args, **kwargs)
-        op2_horizon = self.visit(node.children[1], *args, **kwargs)
-        out = max(op1_horizon, op2_horizon)
-        self.horizons[node] = out
-        return out
+        pass
 
     def visitEventually(self, node, *args, **kwargs):
-        raise RTAMTException('Cannot pastify an unbounded eventually.')
+        pass
 
     def visitAlways(self, node, *args, **kwargs):
-        raise RTAMTException('Cannot pastify an unbounded always.')
+        pass
 
     def visitUntil(self, node, *args, **kwargs):
-        raise RTAMTException('Cannot pastify an unbounded until.')
+        pass
 
     def visitOnce(self, node, *args, **kwargs):
-        op_horizon = self.visit(node.children[0], *args, **kwargs)
-        self.horizons[node] = op_horizon
-        return op_horizon
+        pass
 
     def visitPrevious(self, node, *args, **kwargs):
-        op_horizon = self.visit(node.children[0], *args, **kwargs)
-        self.horizons[node] = op_horizon
-        return op_horizon
+        pass
 
     def visitStrongPrevious(self, node, *args, **kwargs):
-        op_horizon = self.visit(node.children[0], *args, **kwargs)
-        self.horizons[node] = op_horizon
-        return op_horizon
+        pass
 
     def visitNext(self, node, *args, **kwargs):
-        op_horizon = self.visit(node.children[0], *args, **kwargs)
-        self.horizons[node] = op_horizon
-        return op_horizon
+        pass
 
     def visitStrongNext(self, node, *args, **kwargs):
-        op_horizon = self.visit(node.children[0], *args, **kwargs)
-        self.horizons[node] = op_horizon
-        return op_horizon
+        pass
 
     def visitHistorically(self, node, *args, **kwargs):
-        op_horizon = self.visit(node.children[0], *args, **kwargs)
-        self.horizons[node] = op_horizon
-        return op_horizon
+        pass
 
     def visitSince(self, node, *args, **kwargs):
-        op1_horizon = self.visit(node.children[0], *args, **kwargs)
-        op2_horizon = self.visit(node.children[1], *args, **kwargs)
-        out = max(op1_horizon, op2_horizon)
-        self.horizons[node] = out
-        return out
+        pass
 
     def visitDefault(self, node):
-        raise RTAMTException('LTL Pastifier: encountered unexpected type of object.')
+        pass

@@ -1,7 +1,7 @@
 from rtamt.semantics.abstract_online_operation import AbstractOnlineOperation
 
-
 class MultiplicationOperation(AbstractOnlineOperation):
+
     def __init__(self):
         pass
 
@@ -9,5 +9,4 @@ class MultiplicationOperation(AbstractOnlineOperation):
         pass
 
     def update(self, sample_left, sample_right):
-        sample_result = sample_left * sample_right
-        return sample_result
+        pass

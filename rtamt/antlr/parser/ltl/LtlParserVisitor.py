@@ -1,303 +1,182 @@
-# Generated from LtlParser.g4 by ANTLR 4.7.2
 from antlr4 import *
-if __name__ is not None and "." in __name__:
+if __name__ is not None and '.' in __name__:
     from .LtlParser import LtlParser
 else:
     from LtlParser import LtlParser
 
-# This class defines a complete generic visitor for a parse tree produced by LtlParser.
-
 class LtlParserVisitor(ParseTreeVisitor):
 
-    # Visit a parse tree produced by LtlParser#specification_file.
-    def visitSpecification_file(self, ctx:LtlParser.Specification_fileContext):
-        return self.visitChildren(ctx)
+    def visitSpecification_file(self, ctx: LtlParser.Specification_fileContext):
+        pass
 
+    def visitSpecification(self, ctx: LtlParser.SpecificationContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#specification.
-    def visitSpecification(self, ctx:LtlParser.SpecificationContext):
-        return self.visitChildren(ctx)
+    def visitSpecificationId(self, ctx: LtlParser.SpecificationIdContext):
+        pass
 
+    def visitModImport(self, ctx: LtlParser.ModImportContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#SpecificationId.
-    def visitSpecificationId(self, ctx:LtlParser.SpecificationIdContext):
-        return self.visitChildren(ctx)
+    def visitAssertion(self, ctx: LtlParser.AssertionContext):
+        pass
 
+    def visitDeclVariable(self, ctx: LtlParser.DeclVariableContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#modImport.
-    def visitModImport(self, ctx:LtlParser.ModImportContext):
-        return self.visitChildren(ctx)
+    def visitDeclConstant(self, ctx: LtlParser.DeclConstantContext):
+        pass
 
+    def visitAnnotation(self, ctx: LtlParser.AnnotationContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#assertion.
-    def visitAssertion(self, ctx:LtlParser.AssertionContext):
-        return self.visitChildren(ctx)
+    def visitRosTopic(self, ctx: LtlParser.RosTopicContext):
+        pass
 
+    def visitVariableDeclaration(self, ctx: LtlParser.VariableDeclarationContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#declVariable.
-    def visitDeclVariable(self, ctx:LtlParser.DeclVariableContext):
-        return self.visitChildren(ctx)
+    def visitConstantDeclaration(self, ctx: LtlParser.ConstantDeclarationContext):
+        pass
 
+    def visitAsgnLiteral(self, ctx: LtlParser.AsgnLiteralContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#declConstant.
-    def visitDeclConstant(self, ctx:LtlParser.DeclConstantContext):
-        return self.visitChildren(ctx)
+    def visitAsgnExpr(self, ctx: LtlParser.AsgnExprContext):
+        pass
 
+    def visitDomainType(self, ctx: LtlParser.DomainTypeContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#annotation.
-    def visitAnnotation(self, ctx:LtlParser.AnnotationContext):
-        return self.visitChildren(ctx)
+    def visitIoType(self, ctx: LtlParser.IoTypeContext):
+        pass
 
+    def visitExprNot(self, ctx: LtlParser.ExprNotContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#rosTopic.
-    def visitRosTopic(self, ctx:LtlParser.RosTopicContext):
-        return self.visitChildren(ctx)
+    def visitExprNext(self, ctx: LtlParser.ExprNextContext):
+        pass
 
+    def visitExprAddSub(self, ctx: LtlParser.ExprAddSubContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#variableDeclaration.
-    def visitVariableDeclaration(self, ctx:LtlParser.VariableDeclarationContext):
-        return self.visitChildren(ctx)
+    def visitExprUnless(self, ctx: LtlParser.ExprUnlessContext):
+        pass
 
+    def visitExprFall(self, ctx: LtlParser.ExprFallContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#constantDeclaration.
-    def visitConstantDeclaration(self, ctx:LtlParser.ConstantDeclarationContext):
-        return self.visitChildren(ctx)
+    def visitExprPredicate(self, ctx: LtlParser.ExprPredicateContext):
+        pass
 
+    def visitExprRise(self, ctx: LtlParser.ExprRiseContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#AsgnLiteral.
-    def visitAsgnLiteral(self, ctx:LtlParser.AsgnLiteralContext):
-        return self.visitChildren(ctx)
+    def visitExprOr(self, ctx: LtlParser.ExprOrContext):
+        pass
 
+    def visitExprLog(self, ctx: LtlParser.ExprLogContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#AsgnExpr.
-    def visitAsgnExpr(self, ctx:LtlParser.AsgnExprContext):
-        return self.visitChildren(ctx)
+    def visitExprId(self, ctx: LtlParser.ExprIdContext):
+        pass
 
+    def visitExprSince(self, ctx: LtlParser.ExprSinceContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#domainType.
-    def visitDomainType(self, ctx:LtlParser.DomainTypeContext):
-        return self.visitChildren(ctx)
+    def visitExprParen(self, ctx: LtlParser.ExprParenContext):
+        pass
 
+    def visitExprIff(self, ctx: LtlParser.ExprIffContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#ioType.
-    def visitIoType(self, ctx:LtlParser.IoTypeContext):
-        return self.visitChildren(ctx)
+    def visitExpreOnce(self, ctx: LtlParser.ExpreOnceContext):
+        pass
 
+    def visitExprEv(self, ctx: LtlParser.ExprEvContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#ExprNot.
-    def visitExprNot(self, ctx:LtlParser.ExprNotContext):
-        return self.visitChildren(ctx)
+    def visitExprStrongPrevious(self, ctx: LtlParser.ExprStrongPreviousContext):
+        pass
 
+    def visitExprImplies(self, ctx: LtlParser.ExprImpliesContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#ExprNext.
-    def visitExprNext(self, ctx:LtlParser.ExprNextContext):
-        return self.visitChildren(ctx)
+    def visitExprUntil(self, ctx: LtlParser.ExprUntilContext):
+        pass
 
+    def visitExprStrongNext(self, ctx: LtlParser.ExprStrongNextContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#ExprAddSub.
-    def visitExprAddSub(self, ctx:LtlParser.ExprAddSubContext):
-        return self.visitChildren(ctx)
+    def visitExprAbs(self, ctx: LtlParser.ExprAbsContext):
+        pass
 
+    def visitExprAnd(self, ctx: LtlParser.ExprAndContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#ExprUnless.
-    def visitExprUnless(self, ctx:LtlParser.ExprUnlessContext):
-        return self.visitChildren(ctx)
+    def visitExprPow(self, ctx: LtlParser.ExprPowContext):
+        pass
 
+    def visitExprPrevious(self, ctx: LtlParser.ExprPreviousContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#ExprFall.
-    def visitExprFall(self, ctx:LtlParser.ExprFallContext):
-        return self.visitChildren(ctx)
+    def visitExprHist(self, ctx: LtlParser.ExprHistContext):
+        pass
 
+    def visitExprNegate(self, ctx: LtlParser.ExprNegateContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#ExprPredicate.
-    def visitExprPredicate(self, ctx:LtlParser.ExprPredicateContext):
-        return self.visitChildren(ctx)
+    def visitExprXor(self, ctx: LtlParser.ExprXorContext):
+        pass
 
+    def visitExprLn(self, ctx: LtlParser.ExprLnContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#ExprRise.
-    def visitExprRise(self, ctx:LtlParser.ExprRiseContext):
-        return self.visitChildren(ctx)
+    def visitExprExp(self, ctx: LtlParser.ExprExpContext):
+        pass
 
+    def visitExprAlways(self, ctx: LtlParser.ExprAlwaysContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#ExprOr.
-    def visitExprOr(self, ctx:LtlParser.ExprOrContext):
-        return self.visitChildren(ctx)
+    def visitExprLiteral(self, ctx: LtlParser.ExprLiteralContext):
+        pass
 
+    def visitExprMultDiv(self, ctx: LtlParser.ExprMultDivContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#ExprLog.
-    def visitExprLog(self, ctx:LtlParser.ExprLogContext):
-        return self.visitChildren(ctx)
+    def visitExprSqrt(self, ctx: LtlParser.ExprSqrtContext):
+        pass
 
+    def visitMult(self, ctx: LtlParser.MultContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#ExprId.
-    def visitExprId(self, ctx:LtlParser.ExprIdContext):
-        return self.visitChildren(ctx)
+    def visitDiv(self, ctx: LtlParser.DivContext):
+        pass
 
+    def visitPlus(self, ctx: LtlParser.PlusContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#ExprSince.
-    def visitExprSince(self, ctx:LtlParser.ExprSinceContext):
-        return self.visitChildren(ctx)
+    def visitMinus(self, ctx: LtlParser.MinusContext):
+        pass
 
+    def visitLeq(self, ctx: LtlParser.LeqContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#ExprParen.
-    def visitExprParen(self, ctx:LtlParser.ExprParenContext):
-        return self.visitChildren(ctx)
+    def visitGeq(self, ctx: LtlParser.GeqContext):
+        pass
 
+    def visitLess(self, ctx: LtlParser.LessContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#ExprIff.
-    def visitExprIff(self, ctx:LtlParser.ExprIffContext):
-        return self.visitChildren(ctx)
+    def visitGreater(self, ctx: LtlParser.GreaterContext):
+        pass
 
+    def visitEq(self, ctx: LtlParser.EqContext):
+        pass
 
-    # Visit a parse tree produced by LtlParser#ExpreOnce.
-    def visitExpreOnce(self, ctx:LtlParser.ExpreOnceContext):
-        return self.visitChildren(ctx)
+    def visitNeq(self, ctx: LtlParser.NeqContext):
+        pass
 
-
-    # Visit a parse tree produced by LtlParser#ExprEv.
-    def visitExprEv(self, ctx:LtlParser.ExprEvContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#ExprStrongPrevious.
-    def visitExprStrongPrevious(self, ctx:LtlParser.ExprStrongPreviousContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#ExprImplies.
-    def visitExprImplies(self, ctx:LtlParser.ExprImpliesContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#ExprUntil.
-    def visitExprUntil(self, ctx:LtlParser.ExprUntilContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#ExprStrongNext.
-    def visitExprStrongNext(self, ctx:LtlParser.ExprStrongNextContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#ExprAbs.
-    def visitExprAbs(self, ctx:LtlParser.ExprAbsContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#ExprAnd.
-    def visitExprAnd(self, ctx:LtlParser.ExprAndContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#ExprPow.
-    def visitExprPow(self, ctx:LtlParser.ExprPowContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#ExprPrevious.
-    def visitExprPrevious(self, ctx:LtlParser.ExprPreviousContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#ExprHist.
-    def visitExprHist(self, ctx:LtlParser.ExprHistContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#ExprNegate.
-    def visitExprNegate(self, ctx:LtlParser.ExprNegateContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#ExprXor.
-    def visitExprXor(self, ctx:LtlParser.ExprXorContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#ExprLn.
-    def visitExprLn(self, ctx:LtlParser.ExprLnContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#ExprExp.
-    def visitExprExp(self, ctx:LtlParser.ExprExpContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#ExprAlways.
-    def visitExprAlways(self, ctx:LtlParser.ExprAlwaysContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#ExprLiteral.
-    def visitExprLiteral(self, ctx:LtlParser.ExprLiteralContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#ExprMultDiv.
-    def visitExprMultDiv(self, ctx:LtlParser.ExprMultDivContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#ExprSqrt.
-    def visitExprSqrt(self, ctx:LtlParser.ExprSqrtContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#Mult.
-    def visitMult(self, ctx:LtlParser.MultContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#Div.
-    def visitDiv(self, ctx:LtlParser.DivContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#Plus.
-    def visitPlus(self, ctx:LtlParser.PlusContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#Minus.
-    def visitMinus(self, ctx:LtlParser.MinusContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#Leq.
-    def visitLeq(self, ctx:LtlParser.LeqContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#Geq.
-    def visitGeq(self, ctx:LtlParser.GeqContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#Less.
-    def visitLess(self, ctx:LtlParser.LessContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#Greater.
-    def visitGreater(self, ctx:LtlParser.GreaterContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#Eq.
-    def visitEq(self, ctx:LtlParser.EqContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#Neq.
-    def visitNeq(self, ctx:LtlParser.NeqContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LtlParser#literal.
-    def visitLiteral(self, ctx:LtlParser.LiteralContext):
-        return self.visitChildren(ctx)
-
-
-
+    def visitLiteral(self, ctx: LtlParser.LiteralContext):
+        pass
 del LtlParser

@@ -2,5 +2,4 @@ from rtamt.semantics.stl.discrete_time.online.ast_visitor import StlDiscreteTime
 from rtamt.semantics.abstract_discrete_time_online_interpreter import discrete_time_online_interpreter_factory
 
 def StlDiscreteTimeOnlineInterpreter():
-    stlDiscreteTimeOnlineInterpreter = discrete_time_online_interpreter_factory(StlDiscreteTimeOnlineAstVisitor)()
-    return stlDiscreteTimeOnlineInterpreter
+    pass

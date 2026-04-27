@@ -1,14 +1,12 @@
 from rtamt.semantics.abstract_online_operation import AbstractOnlineOperation
 
 class StrongPreviousOperation(AbstractOnlineOperation):
+
     def __init__(self):
-        self.prev = -float("inf")
+        pass
 
     def reset(self):
-        self.__init__()
+        pass
 
     def update(self, sample):
-        sample_return = self.prev
-        self.prev = sample
-
-        return sample_return
+        pass

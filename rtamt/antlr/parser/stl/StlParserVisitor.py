@@ -1,323 +1,194 @@
-# Generated from StlParser.g4 by ANTLR 4.7.2
 from antlr4 import *
-if __name__ is not None and "." in __name__:
+if __name__ is not None and '.' in __name__:
     from .StlParser import StlParser
 else:
     from StlParser import StlParser
 
-# This class defines a complete generic visitor for a parse tree produced by StlParser.
-
 class StlParserVisitor(ParseTreeVisitor):
 
-    # Visit a parse tree produced by StlParser#interval.
-    def visitInterval(self, ctx:StlParser.IntervalContext):
-        return self.visitChildren(ctx)
+    def visitInterval(self, ctx: StlParser.IntervalContext):
+        pass
 
+    def visitIntervalTimeLiteral(self, ctx: StlParser.IntervalTimeLiteralContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#intervalTimeLiteral.
-    def visitIntervalTimeLiteral(self, ctx:StlParser.IntervalTimeLiteralContext):
-        return self.visitChildren(ctx)
+    def visitConstantTimeLiteral(self, ctx: StlParser.ConstantTimeLiteralContext):
+        pass
 
+    def visitUnit(self, ctx: StlParser.UnitContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#constantTimeLiteral.
-    def visitConstantTimeLiteral(self, ctx:StlParser.ConstantTimeLiteralContext):
-        return self.visitChildren(ctx)
+    def visitExprNot(self, ctx: StlParser.ExprNotContext):
+        pass
 
+    def visitExprNext(self, ctx: StlParser.ExprNextContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#unit.
-    def visitUnit(self, ctx:StlParser.UnitContext):
-        return self.visitChildren(ctx)
+    def visitExprAddSub(self, ctx: StlParser.ExprAddSubContext):
+        pass
 
+    def visitExprUnless(self, ctx: StlParser.ExprUnlessContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprNot.
-    def visitExprNot(self, ctx:StlParser.ExprNotContext):
-        return self.visitChildren(ctx)
+    def visitExprFall(self, ctx: StlParser.ExprFallContext):
+        pass
 
+    def visitExprPredicate(self, ctx: StlParser.ExprPredicateContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprNext.
-    def visitExprNext(self, ctx:StlParser.ExprNextContext):
-        return self.visitChildren(ctx)
+    def visitExprRise(self, ctx: StlParser.ExprRiseContext):
+        pass
 
+    def visitExprOr(self, ctx: StlParser.ExprOrContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprAddSub.
-    def visitExprAddSub(self, ctx:StlParser.ExprAddSubContext):
-        return self.visitChildren(ctx)
+    def visitExprLog(self, ctx: StlParser.ExprLogContext):
+        pass
 
+    def visitExprId(self, ctx: StlParser.ExprIdContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprUnless.
-    def visitExprUnless(self, ctx:StlParser.ExprUnlessContext):
-        return self.visitChildren(ctx)
+    def visitExprSince(self, ctx: StlParser.ExprSinceContext):
+        pass
 
+    def visitExprParen(self, ctx: StlParser.ExprParenContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprFall.
-    def visitExprFall(self, ctx:StlParser.ExprFallContext):
-        return self.visitChildren(ctx)
+    def visitExprIff(self, ctx: StlParser.ExprIffContext):
+        pass
 
+    def visitExpreOnce(self, ctx: StlParser.ExpreOnceContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprPredicate.
-    def visitExprPredicate(self, ctx:StlParser.ExprPredicateContext):
-        return self.visitChildren(ctx)
+    def visitExprEv(self, ctx: StlParser.ExprEvContext):
+        pass
 
+    def visitExprStrongPrevious(self, ctx: StlParser.ExprStrongPreviousContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprRise.
-    def visitExprRise(self, ctx:StlParser.ExprRiseContext):
-        return self.visitChildren(ctx)
+    def visitExprImplies(self, ctx: StlParser.ExprImpliesContext):
+        pass
 
+    def visitExprUntil(self, ctx: StlParser.ExprUntilContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprOr.
-    def visitExprOr(self, ctx:StlParser.ExprOrContext):
-        return self.visitChildren(ctx)
+    def visitExprStrongNext(self, ctx: StlParser.ExprStrongNextContext):
+        pass
 
+    def visitExprAbs(self, ctx: StlParser.ExprAbsContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprLog.
-    def visitExprLog(self, ctx:StlParser.ExprLogContext):
-        return self.visitChildren(ctx)
+    def visitExprAnd(self, ctx: StlParser.ExprAndContext):
+        pass
 
+    def visitExprPow(self, ctx: StlParser.ExprPowContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprId.
-    def visitExprId(self, ctx:StlParser.ExprIdContext):
-        return self.visitChildren(ctx)
+    def visitExprPrevious(self, ctx: StlParser.ExprPreviousContext):
+        pass
 
+    def visitExprHist(self, ctx: StlParser.ExprHistContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprSince.
-    def visitExprSince(self, ctx:StlParser.ExprSinceContext):
-        return self.visitChildren(ctx)
+    def visitExprNegate(self, ctx: StlParser.ExprNegateContext):
+        pass
 
+    def visitExprXor(self, ctx: StlParser.ExprXorContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprParen.
-    def visitExprParen(self, ctx:StlParser.ExprParenContext):
-        return self.visitChildren(ctx)
+    def visitExprLn(self, ctx: StlParser.ExprLnContext):
+        pass
 
+    def visitExprExp(self, ctx: StlParser.ExprExpContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprIff.
-    def visitExprIff(self, ctx:StlParser.ExprIffContext):
-        return self.visitChildren(ctx)
+    def visitExprAlways(self, ctx: StlParser.ExprAlwaysContext):
+        pass
 
+    def visitExprLiteral(self, ctx: StlParser.ExprLiteralContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExpreOnce.
-    def visitExpreOnce(self, ctx:StlParser.ExpreOnceContext):
-        return self.visitChildren(ctx)
+    def visitExprMultDiv(self, ctx: StlParser.ExprMultDivContext):
+        pass
 
+    def visitExprSqrt(self, ctx: StlParser.ExprSqrtContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprEv.
-    def visitExprEv(self, ctx:StlParser.ExprEvContext):
-        return self.visitChildren(ctx)
+    def visitSpecification_file(self, ctx: StlParser.Specification_fileContext):
+        pass
 
+    def visitSpecification(self, ctx: StlParser.SpecificationContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprStrongPrevious.
-    def visitExprStrongPrevious(self, ctx:StlParser.ExprStrongPreviousContext):
-        return self.visitChildren(ctx)
+    def visitSpecificationId(self, ctx: StlParser.SpecificationIdContext):
+        pass
 
+    def visitModImport(self, ctx: StlParser.ModImportContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprImplies.
-    def visitExprImplies(self, ctx:StlParser.ExprImpliesContext):
-        return self.visitChildren(ctx)
+    def visitAssertion(self, ctx: StlParser.AssertionContext):
+        pass
 
+    def visitDeclVariable(self, ctx: StlParser.DeclVariableContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprUntil.
-    def visitExprUntil(self, ctx:StlParser.ExprUntilContext):
-        return self.visitChildren(ctx)
+    def visitDeclConstant(self, ctx: StlParser.DeclConstantContext):
+        pass
 
+    def visitAnnotation(self, ctx: StlParser.AnnotationContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprStrongNext.
-    def visitExprStrongNext(self, ctx:StlParser.ExprStrongNextContext):
-        return self.visitChildren(ctx)
+    def visitRosTopic(self, ctx: StlParser.RosTopicContext):
+        pass
 
+    def visitVariableDeclaration(self, ctx: StlParser.VariableDeclarationContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprAbs.
-    def visitExprAbs(self, ctx:StlParser.ExprAbsContext):
-        return self.visitChildren(ctx)
+    def visitConstantDeclaration(self, ctx: StlParser.ConstantDeclarationContext):
+        pass
 
+    def visitAsgnLiteral(self, ctx: StlParser.AsgnLiteralContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprAnd.
-    def visitExprAnd(self, ctx:StlParser.ExprAndContext):
-        return self.visitChildren(ctx)
+    def visitAsgnExpr(self, ctx: StlParser.AsgnExprContext):
+        pass
 
+    def visitDomainType(self, ctx: StlParser.DomainTypeContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprPow.
-    def visitExprPow(self, ctx:StlParser.ExprPowContext):
-        return self.visitChildren(ctx)
+    def visitIoType(self, ctx: StlParser.IoTypeContext):
+        pass
 
+    def visitMult(self, ctx: StlParser.MultContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprPrevious.
-    def visitExprPrevious(self, ctx:StlParser.ExprPreviousContext):
-        return self.visitChildren(ctx)
+    def visitDiv(self, ctx: StlParser.DivContext):
+        pass
 
+    def visitPlus(self, ctx: StlParser.PlusContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprHist.
-    def visitExprHist(self, ctx:StlParser.ExprHistContext):
-        return self.visitChildren(ctx)
+    def visitMinus(self, ctx: StlParser.MinusContext):
+        pass
 
+    def visitLeq(self, ctx: StlParser.LeqContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprNegate.
-    def visitExprNegate(self, ctx:StlParser.ExprNegateContext):
-        return self.visitChildren(ctx)
+    def visitGeq(self, ctx: StlParser.GeqContext):
+        pass
 
+    def visitLess(self, ctx: StlParser.LessContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprXor.
-    def visitExprXor(self, ctx:StlParser.ExprXorContext):
-        return self.visitChildren(ctx)
+    def visitGreater(self, ctx: StlParser.GreaterContext):
+        pass
 
+    def visitEq(self, ctx: StlParser.EqContext):
+        pass
 
-    # Visit a parse tree produced by StlParser#ExprLn.
-    def visitExprLn(self, ctx:StlParser.ExprLnContext):
-        return self.visitChildren(ctx)
+    def visitNeq(self, ctx: StlParser.NeqContext):
+        pass
 
-
-    # Visit a parse tree produced by StlParser#ExprExp.
-    def visitExprExp(self, ctx:StlParser.ExprExpContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#ExprAlways.
-    def visitExprAlways(self, ctx:StlParser.ExprAlwaysContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#ExprLiteral.
-    def visitExprLiteral(self, ctx:StlParser.ExprLiteralContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#ExprMultDiv.
-    def visitExprMultDiv(self, ctx:StlParser.ExprMultDivContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#ExprSqrt.
-    def visitExprSqrt(self, ctx:StlParser.ExprSqrtContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#specification_file.
-    def visitSpecification_file(self, ctx:StlParser.Specification_fileContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#specification.
-    def visitSpecification(self, ctx:StlParser.SpecificationContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#SpecificationId.
-    def visitSpecificationId(self, ctx:StlParser.SpecificationIdContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#modImport.
-    def visitModImport(self, ctx:StlParser.ModImportContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#assertion.
-    def visitAssertion(self, ctx:StlParser.AssertionContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#declVariable.
-    def visitDeclVariable(self, ctx:StlParser.DeclVariableContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#declConstant.
-    def visitDeclConstant(self, ctx:StlParser.DeclConstantContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#annotation.
-    def visitAnnotation(self, ctx:StlParser.AnnotationContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#rosTopic.
-    def visitRosTopic(self, ctx:StlParser.RosTopicContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#variableDeclaration.
-    def visitVariableDeclaration(self, ctx:StlParser.VariableDeclarationContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#constantDeclaration.
-    def visitConstantDeclaration(self, ctx:StlParser.ConstantDeclarationContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#AsgnLiteral.
-    def visitAsgnLiteral(self, ctx:StlParser.AsgnLiteralContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#AsgnExpr.
-    def visitAsgnExpr(self, ctx:StlParser.AsgnExprContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#domainType.
-    def visitDomainType(self, ctx:StlParser.DomainTypeContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#ioType.
-    def visitIoType(self, ctx:StlParser.IoTypeContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#Mult.
-    def visitMult(self, ctx:StlParser.MultContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#Div.
-    def visitDiv(self, ctx:StlParser.DivContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#Plus.
-    def visitPlus(self, ctx:StlParser.PlusContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#Minus.
-    def visitMinus(self, ctx:StlParser.MinusContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#Leq.
-    def visitLeq(self, ctx:StlParser.LeqContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#Geq.
-    def visitGeq(self, ctx:StlParser.GeqContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#Less.
-    def visitLess(self, ctx:StlParser.LessContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#Greater.
-    def visitGreater(self, ctx:StlParser.GreaterContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#Eq.
-    def visitEq(self, ctx:StlParser.EqContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#Neq.
-    def visitNeq(self, ctx:StlParser.NeqContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by StlParser#literal.
-    def visitLiteral(self, ctx:StlParser.LiteralContext):
-        return self.visitChildren(ctx)
-
-
-
+    def visitLiteral(self, ctx: StlParser.LiteralContext):
+        pass
 del StlParser

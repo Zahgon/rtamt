@@ -1,20 +1,14 @@
-from rtamt.semantics.iastl.dense_time.offline.ast_visitor import IAStlDenseTimeOfflineAstVisitor, \
-    IAStlOutputRobustnessDenseTimeOfflineAstVisitor, IAStlInputRobustnessDenseTimeOfflineAstVisitor, \
-    IAStlInputVacuityDenseTimeOfflineAstVisitor, IAStlOutputVacuityDenseTimeOfflineAstVisitor
+from rtamt.semantics.iastl.dense_time.offline.ast_visitor import IAStlDenseTimeOfflineAstVisitor, IAStlOutputRobustnessDenseTimeOfflineAstVisitor, IAStlInputRobustnessDenseTimeOfflineAstVisitor, IAStlInputVacuityDenseTimeOfflineAstVisitor, IAStlOutputVacuityDenseTimeOfflineAstVisitor
 from rtamt.semantics.abstract_dense_time_offline_interpreter import dense_time_offline_interpreter_factory
 
 def IAStlOutputRobustnessDenseTimeOfflineInterpreter():
-    iastlDenseTimeOfflineInterpreter = dense_time_offline_interpreter_factory(IAStlOutputRobustnessDenseTimeOfflineAstVisitor)()
-    return iastlDenseTimeOfflineInterpreter
+    pass
 
 def IAStlInputRobustnessDenseTimeOfflineInterpreter():
-    iastlDenseTimeOfflineInterpreter = dense_time_offline_interpreter_factory(IAStlInputRobustnessDenseTimeOfflineAstVisitor)()
-    return iastlDenseTimeOfflineInterpreter
+    pass
 
 def IAStlInputVacuityDenseTimeOfflineInterpreter():
-    iastlDenseTimeOfflineInterpreter = dense_time_offline_interpreter_factory(IAStlInputVacuityDenseTimeOfflineAstVisitor)()
-    return iastlDenseTimeOfflineInterpreter
+    pass
 
 def IAStlOutputVacuityDenseTimeOfflineInterpreter():
-    iastlDenseTimeOfflineInterpreter = dense_time_offline_interpreter_factory(IAStlOutputVacuityDenseTimeOfflineAstVisitor)()
-    return iastlDenseTimeOfflineInterpreter
+    pass

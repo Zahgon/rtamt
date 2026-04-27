@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
 from abc import abstractmethod
-
 from rtamt.semantics.abstract_online_operation import AbstractOnlineOperation
 
 class AbstractDenseTimeOnlineOperation(AbstractOnlineOperation):

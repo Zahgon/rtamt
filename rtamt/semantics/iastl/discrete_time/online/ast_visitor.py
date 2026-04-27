@@ -5,35 +5,24 @@ from rtamt.semantics.enumerations.options import Semantics
 class IAStlDiscreteTimeOnlineAstVisitor(StlDiscreteTimeOnlineAstVisitor):
 
     def visitPredicate(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = PredicateOperation(node.operator, self.ast.semantics,
-                                                                  node.in_vars, node.out_vars)
+        pass
 
 class IAStlOutputRobustnessDiscreteTimeOnlineAstVisitor(StlDiscreteTimeOnlineAstVisitor):
 
     def visitPredicate(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = PredicateOperation(node.operator, Semantics.OUTPUT_ROBUSTNESS,
-                                                                  node.in_vars, node.out_vars)
+        pass
 
 class IAStlInputVacuityDiscreteTimeOnlineAstVisitor(StlDiscreteTimeOnlineAstVisitor):
 
     def visitPredicate(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = PredicateOperation(node.operator, Semantics.INPUT_VACUITY,
-                                                                  node.in_vars, node.out_vars)
+        pass
 
 class IAStlOutputVacuityDiscreteTimeOnlineAstVisitor(StlDiscreteTimeOnlineAstVisitor):
 
     def visitPredicate(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-
-        self.online_operator_dict[node.name] = PredicateOperation(node.operator, Semantics.OUTPUT_VACUITY,
-                                                                  node.in_vars, node.out_vars)
+        pass
 
 class IAStlInputRobustnessDiscreteTimeOnlineAstVisitor(StlDiscreteTimeOnlineAstVisitor):
 
     def visitPredicate(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = PredicateOperation(node.operator, Semantics.INPUT_ROBUSTNESS,
-                                                                  node.in_vars, node.out_vars)
+        pass

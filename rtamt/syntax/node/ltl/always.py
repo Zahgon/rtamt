@@ -12,15 +12,4 @@ class Always(UnaryNode):
             child : stl.Node
             bound : Interval
         """
-        super(Always, self).__init__(child)
-
-        self.in_vars = child.in_vars
-        self.out_vars = child.out_vars
-
-        self.name = 'always(' + child.name + ')'
-
-
-
-
-
-
+        pass

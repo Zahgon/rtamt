@@ -1,6 +1,7 @@
 from rtamt.semantics.abstract_online_operation import AbstractOnlineOperation
 
 class ImpliesOperation(AbstractOnlineOperation):
+
     def __init__(self):
         pass
 
@@ -8,5 +9,4 @@ class ImpliesOperation(AbstractOnlineOperation):
         pass
 
     def update(self, sample_left, sample_right):
-        sample_return = max(-sample_left, sample_right)
-        return sample_return
+        pass

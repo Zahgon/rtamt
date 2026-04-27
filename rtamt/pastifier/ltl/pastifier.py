@@ -1,5 +1,4 @@
 from rtamt.syntax.ast.visitor.ltl.ast_visitor import LtlAstVisitor
-
 from rtamt.syntax.node.ltl.predicate import Predicate
 from rtamt.syntax.node.ltl.variable import Variable
 from rtamt.syntax.node.ltl.neg import Neg
@@ -24,302 +23,106 @@ from rtamt.syntax.node.ltl.fall import Fall
 from rtamt.syntax.node.ltl.rise import Rise
 from rtamt.syntax.node.ltl.constant import Constant
 from rtamt.syntax.node.ltl.previous import Previous
-
 from rtamt.exception.exception import RTAMTException
 from rtamt.pastifier.ltl.horizon import LtlHorizon
-
 
 class LtlPastifier(LtlAstVisitor):
 
     def __init__(self):
-        self.subformula_horizons = dict()
-        self.ast = None
+        pass
 
     def pastify(self, ast):
-        self.ast = ast
-        h = LtlHorizon()
-        horizons = dict()
-        for spec in ast.specs:
-            horizon = h.visit(spec, None)
-            self.subformula_horizons = h.horizons
-            horizons[spec] = horizon
-        pastified_specs = []
-        for spec in ast.specs:
-            horizon = horizons[spec]
-            pastified_spec = self.visit(spec, horizon)
-            pastified_specs.append(pastified_spec)
-        ast.phi_name_to_node_dict = self.ast.phi_name_to_node_dict
-        ast.specs = pastified_specs
-        return ast
+        pass
 
     def visit(self, node, *args, **kwargs):
-        out = LtlAstVisitor.visit(self, node, *args, **kwargs)
-        d = self.ast.phi_name_to_node_dict
-        keys = [k for k, v in d.items() if v == node]
-        self.ast.phi_name_to_node_dict.update({key: out for key in keys})
-        return out
+        pass
 
     def visitConstant(self, node, *args, **kwargs):
-        node = Constant(node.val)
-        return node
+        pass
 
     def visitPredicate(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child1_node = self.visit(node.children[0], *args, **kwargs)
-        child2_node = self.visit(node.children[1], *args, **kwargs)
-        node = Predicate(child1_node, child2_node, node.operator)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitVariable(self, node, *args, **kwargs):
-        horizon = args[0]
-        node = Variable(node.var, node.field, node.io_type)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitAddition(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child1_node = self.visit(node.children[0], node_horizon)
-        child2_node = self.visit(node.children[1], node_horizon)
-        node = Addition(child1_node, child2_node)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitMultiplication(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child1_node = self.visit(node.children[0], node_horizon)
-        child2_node = self.visit(node.children[1], node_horizon)
-        node = Multiplication(child1_node, child2_node)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitSubtraction(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child1_node = self.visit(node.children[0], node_horizon)
-        child2_node = self.visit(node.children[1], node_horizon)
-        node = Subtraction(child1_node, child2_node)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitDivision(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child1_node = self.visit(node.children[0], node_horizon)
-        child2_node = self.visit(node.children[1], node_horizon)
-        node = Division(child1_node, child2_node)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitAbs(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child_node = self.visit(node.children[0], node_horizon)
-        node = Abs(child_node)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitSqrt(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child_node = self.visit(node.children[0], node_horizon)
-        node = Sqrt(child_node)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitExp(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child_node = self.visit(node.children[0], node_horizon)
-        node = Exp(child_node)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitPow(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child1_node = self.visit(node.children[0], node_horizon)
-        child2_node = self.visit(node.children[1], node_horizon)
-        node = Pow(child1_node, child2_node)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitRise(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child_node = self.visit(node.children[0], node_horizon)
-        node = Rise(child_node)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitFall(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child_node = self.visit(node.children[0], node_horizon)
-        node = Fall(child_node)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitNot(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child_node = self.visit(node.children[0], node_horizon)
-        node = Neg(child_node)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitAnd(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child1_node = self.visit(node.children[0], node_horizon)
-        child2_node = self.visit(node.children[1], node_horizon)
-        node = Conjunction(child1_node, child2_node)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitOr(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child1_node = self.visit(node.children[0], node_horizon)
-        child2_node = self.visit(node.children[1], node_horizon)
-        node = Disjunction(child1_node, child2_node)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitImplies(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child1_node = self.visit(node.children[0], node_horizon)
-        child2_node = self.visit(node.children[1], node_horizon)
-        node = Implies(child1_node, child2_node)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitIff(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child1_node = self.visit(node.children[0], node_horizon)
-        child2_node = self.visit(node.children[1], node_horizon)
-        node = Iff(child1_node, child2_node)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitXor(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child1_node = self.visit(node.children[0], node_horizon)
-        child2_node = self.visit(node.children[1], node_horizon)
-        node = Xor(child1_node, child2_node)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitEventually(self, node, *args, **kwargs):
-        raise RTAMTException('Cannot pastify an unbounded eventually.')
+        pass
 
     def visitAlways(self, node, *args, **kwargs):
-        raise RTAMTException('Cannot pastify an unbounded always.')
+        pass
 
     def visitUntil(self, node, *args, **kwargs):
-        raise RTAMTException('Cannot pastify an unbounded until.')
+        pass
 
     def visitOnce(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child_node = self.visit(node.children[0], node_horizon)
-        node = Once(child_node)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitPrevious(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child_node = self.visit(node.children[0], node_horizon)
-        node = Previous(child_node)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitStrongPrevious(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child_node = self.visit(node.children[0], node_horizon)
-        node = StrongPrevious(child_node)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitNext(self, node, *args, **kwargs):
-        horizon = args[0] - 1
-        child_node = self.visit(node.children[0], horizon)
-        return child_node
+        pass
 
     def visitStrongNext(self, node, *args, **kwargs):
-        horizon = args[0] - 1
-        child_node = self.visit(node.children[0], horizon)
-        return child_node
+        pass
 
     def visitHistorically(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child_node = self.visit(node.children[0], node_horizon)
-        node = Historically(child_node)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitSince(self, node, *args, **kwargs):
-        node_horizon = self.subformula_horizons[node]
-        remaining_horizon = args[0]
-        horizon = remaining_horizon - node_horizon
-        child_node_1 = self.visit(node.children[0], node_horizon)
-        child_node_2 = self.visit(node.children[1], node_horizon)
-        node = Since(child_node_1, child_node_2)
-        for i in range(horizon):
-            node = Previous(node)
-        return node
+        pass
 
     def visitDefault(self, node):
-        raise RTAMTException('LTL Pastifier: encountered unexpected type of object.')
+        pass

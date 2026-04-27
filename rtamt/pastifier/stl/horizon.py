@@ -1,57 +1,35 @@
 from rtamt.syntax.ast.visitor.stl.ast_visitor import StlAstVisitor
 from rtamt.pastifier.ltl.horizon import LtlHorizon
-
 from rtamt.exception.exception import RTAMTException
-
 
 class StlHorizon(LtlHorizon, StlAstVisitor):
 
     def __init__(self):
-        LtlHorizon.__init__(self)
+        pass
 
     def visit(self, node, *args, **kwargs):
-        return StlAstVisitor.visit(self, node, *args, **kwargs)
+        pass
 
     def visitTimedEventually(self, node, *args, **kwargs):
-        op_horizon = self.visit(node.children[0], *args, **kwargs)
-        self.horizons[node] = op_horizon + node.end
-        return op_horizon + node.end
+        pass
 
     def visitTimedAlways(self, node, *args, **kwargs):
-        op_horizon = self.visit(node.children[0], *args, **kwargs)
-        self.horizons[node] = op_horizon + node.end
-        return op_horizon + node.end
+        pass
 
     def visitTimedUntil(self, node, *args, **kwargs):
-        op1_horizon = self.visit(node.children[0], *args, **kwargs)
-        op2_horizon = self.visit(node.children[1], *args, **kwargs)
-        out = max(op1_horizon, op2_horizon) + node.end
-        self.horizons[node] = out
-        return out
+        pass
 
     def visitTimedOnce(self, node, *args, **kwargs):
-        op_horizon = self.visit(node.children[0], *args, **kwargs)
-        self.horizons[node] = op_horizon
-        return op_horizon
+        pass
 
     def visitTimedHistorically(self, node, *args, **kwargs):
-        op_horizon = self.visit(node.children[0], *args, **kwargs)
-        self.horizons[node] = op_horizon
-        return op_horizon
+        pass
 
     def visitTimedSince(self, node, *args, **kwargs):
-        op1_horizon = self.visit(node.children[0], *args, **kwargs)
-        op2_horizon = self.visit(node.children[1], *args, **kwargs)
-        out = max(op1_horizon, op2_horizon)
-        self.horizons[node] = out
-        return out
+        pass
 
     def visitTimedPrecedes(self, node, *args, **kwargs):
-        op1_horizon = self.visit(node.children[0], *args, **kwargs)
-        op2_horizon = self.visit(node.children[1], *args, **kwargs)
-        out = max(op1_horizon, op2_horizon)
-        self.horizons[node] = out
-        return out
+        pass
 
     def visitDefault(self, node):
-        raise RTAMTException('STL Pastifier: encountered unexpected type of node.')
+        pass

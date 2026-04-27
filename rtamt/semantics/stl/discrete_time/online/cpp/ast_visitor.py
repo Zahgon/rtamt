@@ -1,5 +1,4 @@
 from rtamt.syntax.ast.visitor.stl.ast_visitor import StlAstVisitor
-
 from rtamt.semantics.enumerations.comp_op import StlComparisonOperator as CompOp
 from rtamt.lib.rtamt_stl_library_wrapper.stl_combinatorial_binary_node import CombinatorialBinaryOperation
 from rtamt.lib.rtamt_stl_library_wrapper.stl_comp_op import StlComparisonOperator
@@ -31,153 +30,105 @@ from rtamt.lib.rtamt_stl_library_wrapper.stl_once_bounded_node import OnceBounde
 from rtamt.lib.rtamt_stl_library_wrapper.stl_historically_bounded_node import HistoricallyBoundedOperation
 from rtamt.lib.rtamt_stl_library_wrapper.stl_since_bounded_node import SinceBoundedOperation
 from rtamt.lib.rtamt_stl_library_wrapper.stl_precedes_bounded_node import PrecedesBoundedOperation
-
 from rtamt.exception.exception import RTAMTException
-
 
 class StlDiscreteTimeOnlineAstVisitorCpp(StlAstVisitor):
 
     def visitPredicate(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = PredicateOperation(self.op_cpp(node.operator))
+        pass
 
     def visitAbs(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = AbsOperation()
+        pass
 
     def visitPow(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = PowOperation()
+        pass
 
     def visitExp(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = ExpOperation()
+        pass
 
     def visitSqrt(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = SqrtOperation()
+        pass
 
     def visitAddition(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = AdditionOperation()
+        pass
 
     def visitSubtraction(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = SubtractionOperation()
+        pass
 
     def visitMultiplication(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = MultiplicationOperation()
+        pass
 
     def visitDivision(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = DivisionOperation()
+        pass
 
     def visitNot(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = NotOperation()
+        pass
 
     def visitAnd(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = AndOperation()
+        pass
 
     def visitOr(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = OrOperation()
+        pass
 
     def visitImplies(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = ImpliesOperation()
+        pass
 
     def visitIff(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = IffOperation()
+        pass
 
     def visitXor(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = XorOperation()
+        pass
 
     def visitEventually(self, node, *args, **kwargs):
-        #self.visitChildren(node, *args, **kwargs)
-        #self.online_operator_dict[node.name] = EventuallyOperation()
-        raise RTAMTException('Eventually operator is not implemented in the STL online monitor.')
+        pass
 
     def visitAlways(self, node, *args, **kwargs):
-        #self.visitChildren(node, *args, **kwargs)
-        #self.online_operator_dict[node.name] = AlwaysOperation()
-        raise RTAMTException('Always operator is not implemented in the STL online monitor.')
+        pass
 
     def visitUntil(self, node, *args, **kwargs):
-        raise RTAMTException('Until operator is not implemented in the STL online monitor.')
+        pass
 
     def visitOnce(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = OnceOperation()
+        pass
 
     def visitHistorically(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = HistoricallyOperation()
+        pass
 
     def visitSince(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = SinceOperation()
+        pass
 
     def visitRise(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = RiseOperation()
+        pass
 
     def visitFall(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = FallOperation()
+        pass
 
     def visitPrevious(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        self.online_operator_dict[node.name] = PreviousOperation()
+        pass
 
     def visitNext(self, node, *args, **kwargs):
-        raise RTAMTException('Next operator not implemented in STL online monitor.')
+        pass
 
     def visitTimedPrecedes(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        begin, end = self.time_unit_transformer(node)
-        self.online_operator_dict[node.name] = PrecedesBoundedOperation(begin, end)
+        pass
 
     def visitTimedOnce(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        begin, end = self.time_unit_transformer(node)
-        self.online_operator_dict[node.name] = OnceBoundedOperation(begin, end)
+        pass
 
     def visitTimedHistorically(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        begin, end = self.time_unit_transformer(node)
-        self.online_operator_dict[node.name] = HistoricallyBoundedOperation(begin, end)
+        pass
 
     def visitTimedSince(self, node, *args, **kwargs):
-        self.visitChildren(node, *args, **kwargs)
-        begin, end = self.time_unit_transformer(node)
-        self.online_operator_dict[node.name] = SinceBoundedOperation(begin, end)
+        pass
 
     def visitTimedAlways(self, node, *args, **kwargs):
-        raise RTAMTException('Bounded always operator not implemented in STL online monitor.')
+        pass
 
     def visitTimedEventually(self, node, *args, **kwargs):
-        raise RTAMTException('Bounded eventually operator not implemented in STL online monitor.')
+        pass
 
     def visitTimedUntil(self, node, *args, **kwargs):
-        raise RTAMTException('Bounded until operator not implemented in STL online monitor.')
+        pass
 
     def op_cpp(self, op):
-        if op == CompOp.GEQ:
-            return StlComparisonOperator.GEQ
-        elif op == CompOp.GREATER:
-            return StlComparisonOperator.GREATER
-        elif op == CompOp.LEQ:
-            return StlComparisonOperator.LEQ
-        elif op == CompOp.LESS:
-            return StlComparisonOperator.LESS
-        elif op == CompOp.NEQ:
-            return StlComparisonOperator.NEQ
-        elif op == CompOp.EQUAL:
-            return StlComparisonOperator.EQUAL
-        else:
-            raise RTAMTException('Could not find operator {}!'.format(op))
+        pass

@@ -1,13 +1,12 @@
-
 from rtamt.semantics.abstract_dense_time_online_operation import AbstractDenseTimeOnlineOperation
 
 class VariableOperation(AbstractDenseTimeOnlineOperation):
+
     def __init__(self):
-        self.val = None
+        pass
 
     def update(self, *args, **kargs):
-        return self.val
+        pass
 
     def update_final(self, *args, **kargs):
-        out = list()
-        return
+        pass

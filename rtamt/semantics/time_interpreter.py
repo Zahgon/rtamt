@@ -1,7 +1,5 @@
 from abc import ABCMeta, abstractmethod
-
 from rtamt.exception.exception import RTAMTException
-
 
 class TimeInterpreter(object):
     __metaclass__ = ABCMeta
